@@ -7,7 +7,7 @@ variable "cluster_core_instance_group_instance_count" {
 }
 
 variable "data_source_name" {
-  type = string
+  type    = string
   default = "source"
 }
 
