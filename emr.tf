@@ -4,6 +4,7 @@ resource "aws_emr_cluster" "cluster" {
   applications  = ["Spark"]
 
   ec2_attributes {
+    key_name                          = "ondemand-var-spark-cluster"
     subnet_id                         = aws_subnet.main.id
     emr_managed_master_security_group = aws_security_group.allow_access.id
     emr_managed_slave_security_group  = aws_security_group.allow_access.id
