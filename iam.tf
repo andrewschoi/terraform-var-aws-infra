@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "emr_assume_role" {
 }
 
 resource "aws_iam_role" "iam_emr_service_role" {
-  name               = "iam_emr_service_role"
+  name               = "iam_emr_service_role_v2"
   assume_role_policy = data.aws_iam_policy_document.emr_assume_role.json
 }
 
@@ -101,12 +101,12 @@ data "aws_iam_policy_document" "ec2_assume_role" {
 }
 
 resource "aws_iam_role" "iam_emr_profile_role" {
-  name               = "iam_emr_profile_role"
+  name               = "iam_emr_profile_role_v2"
   assume_role_policy = data.aws_iam_policy_document.ec2_assume_role.json
 }
 
 resource "aws_iam_instance_profile" "emr_profile" {
-  name = "emr_profile"
+  name = "emr_profile_v2"
   role = aws_iam_role.iam_emr_profile_role.name
 }
 
