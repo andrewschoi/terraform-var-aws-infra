@@ -12,7 +12,7 @@ data "aws_iam_policy_document" "emr_assume_role" {
 }
 
 resource "aws_iam_role" "iam_emr_service_role" {
-  name               = "iam_emr_service_role_2"
+  name               = "iam_emr_service_role_v2"
   assume_role_policy = data.aws_iam_policy_document.emr_assume_role.json
 }
 
